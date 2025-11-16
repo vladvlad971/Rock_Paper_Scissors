@@ -19,4 +19,10 @@ MOVE playRound function in playGame func;
 CALL the function 5 times;
 */
 
+const choiceString = ["ROCK","PAPER","SCISSORS"] ;
 
+function getComputerChoice(choiceString){
+   let selectString = Math.floor(Math.random()*3);
+   return choiceString[selectString];
+}
+console.log(getComputerChoice(choiceString))
