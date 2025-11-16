@@ -16,7 +16,7 @@ DISPLAY the string value representing the round winner;
 - Write the logic to play the entire game.
 CREATE function playGame;
 MOVE playRound function in playGame func;
-CALL the function 5 times;
+CALL the function 5 times; alert
 */
 
 const choiceString = ["ROCK","PAPER","SCISSORS"] ;
@@ -26,3 +26,17 @@ function getComputerChoice(choiceString){
    return choiceString[selectString];
 }
 console.log(getComputerChoice(choiceString))
+
+let humanInput =prompt("choose between ROCK, PAPER or SCISSORS");
+
+function getHumanChoice(humanInput) {
+   humanInput = humanInput.toUpperCase()
+   return humanInput
+}
+console.log(getHumanChoice(humanInput))
+
+function playRound(getComputerChoice,getHumanChoice) {
+if (getComputerChoice === getHumanChoice) {
+    return "Equality"
+} else if ()
+}
