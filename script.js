@@ -21,6 +21,7 @@ CALL the function 5 times; alert
 
 const choiceString = ["ROCK","PAPER","SCISSORS"] ;
 
+//output computer choice.
 function getComputerChoice(choiceString){
    let selectString = Math.floor(Math.random()*3);
    return choiceString[selectString];
@@ -28,15 +29,28 @@ function getComputerChoice(choiceString){
 console.log(getComputerChoice(choiceString))
 
 let humanInput =prompt("choose between ROCK, PAPER or SCISSORS");
+humanInput = humanInput.toUpperCase();
 
+//output human choice.
 function getHumanChoice(humanInput) {
-   humanInput = humanInput.toUpperCase()
-   return humanInput
+   return humanInput;
 }
 console.log(getHumanChoice(humanInput))
 
-function playRound(getComputerChoice,getHumanChoice) {
-if (getComputerChoice === getHumanChoice) {
-    return "Equality"
-} else if ()
+//play a single round.
+function playRound(computerChoice,humanChoice) {
+
+   
+  if ((computerChoice === choiceString[0]) && (humanChoice === choiceString[2])) {
+      return true ;
+  } else if ((computerChoice === choiceString[1]) && (humanChoice === choiceString[0])){
+      return true;
+  } else if ((computerChoice === choiceString[2]) && (humanChoice === choiceString[1])){
+      return true;
+  } 
 }
+let computerChoice = getComputerChoice(choiceString);
+let humanChoice = getHumanChoice(humanInput)
+console.log(playRound(computerChoice,humanChoice));
+
+//récupérer les output humain et machine, les convertir en numérique, comparer les forces et faiblesse, retourner le gagnant
