@@ -45,17 +45,20 @@ let computerChoice = getComputerChoice(choiceString);
 
 function playRound(humanChoice,computerChoice) {
     if ((humanChoice === choiceString[0]) && (computerChoice === choiceString[2])) {
-      return `You win, ${humanChoice} takes over ${computerChoice}!`;
+      return `You win, ${humanChoice} takes over ${computerChoice}!
+      ${humanScore+1} ; ${computerScore}`  ;
   } else if ((humanChoice === choiceString[1]) && (computerChoice === choiceString[0])){
-      return `You win, ${humanChoice} takes over ${computerChoice}!`
+      return `You win, ${humanChoice} takes over ${computerChoice}!
+      ${humanScore+1} ; ${computerScore}`  ;
   } else if ((humanChoice === choiceString[2]) && (computerChoice === choiceString[1])){
-      return `You win, ${humanChoice} takes over ${computerChoice}!`
+      return `You win, ${humanChoice} takes over ${computerChoice}!
+      ${humanScore+1} ; ${computerScore}`  ;
   } else if (humanChoice === computerChoice) {
-    return `Equality, ${humanChoice} match ${computerChoice}!`
+    return `Equality, ${humanChoice} match ${computerChoice}! 
+    ${humanScore++} ; ${computerScore}`;
   } else {
-    return `You lose, ${humanChoice} lose the round versus ${computerChoice}!`  
+    return `You lose, ${humanChoice} lose the round versus ${computerChoice}! 
+    ${humanScore} ; ${computerScore+1}`;
   }
 }
 
-
-console.log(playRound(humanChoice,computerChoice))
