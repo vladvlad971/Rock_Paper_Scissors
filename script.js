@@ -28,10 +28,10 @@ function getComputerChoice(choiceString){
 }
 
 //output human choice.
-let humanInput = prompt("choose between ROCK, PAPER or SCISSORS");
-
+let humanInput = "";
 
 function getHumanChoice(humanInput) {
+    humanInput = prompt("choose between ROCK, PAPER or SCISSORS");
     humanInput = humanInput.toUpperCase();
     return humanInput ;
 }
@@ -45,20 +45,44 @@ let computerChoice = getComputerChoice(choiceString);
 
 function playRound(humanChoice,computerChoice) {
     if ((humanChoice === choiceString[0]) && (computerChoice === choiceString[2])) {
-      return `You win, ${humanChoice} takes over ${computerChoice}!
-      ${humanScore+1} ; ${computerScore}`  ;
+      return ++humanScore, `You win, ${humanChoice} takes over ${computerChoice}!
+      ${humanScore} ; ${computerScore}`  ;
   } else if ((humanChoice === choiceString[1]) && (computerChoice === choiceString[0])){
-      return `You win, ${humanChoice} takes over ${computerChoice}!
-      ${humanScore+1} ; ${computerScore}`  ;
+      return ++humanScore,`You win, ${humanChoice} takes over ${computerChoice}!
+      ${humanScore} ; ${computerScore}`  ;
   } else if ((humanChoice === choiceString[2]) && (computerChoice === choiceString[1])){
-      return `You win, ${humanChoice} takes over ${computerChoice}!
-      ${humanScore+1} ; ${computerScore}`  ;
+      return ++humanScore,`You win, ${humanChoice} takes over ${computerChoice}!
+      ${humanScore} ; ${computerScore}`  ;
   } else if (humanChoice === computerChoice) {
     return `Equality, ${humanChoice} match ${computerChoice}! 
-    ${humanScore++} ; ${computerScore}`;
+    ${humanScore} ; ${computerScore}`;
   } else {
-    return `You lose, ${humanChoice} lose the round versus ${computerChoice}! 
-    ${humanScore} ; ${computerScore+1}`;
+    return ++computerScore,`You lose, ${humanChoice} lose the round versus ${computerChoice}! 
+    ${humanScore} ; ${computerScore}`;
   }
 }
 
+  
+function playGame(){
+for (let i = 0; i < 4; i++){
+   console.log((playRound(getHumanChoice(humanInput),getComputerChoice(choiceString))));
+  }   
+}
+function theFinalResult(humanScore,computerScore){
+  if (humanScore > computerScore) {
+ return "You win the game with " + humanScore + " points!";
+ } else if (humanScore === computerScore) {
+ return "It's a tie!";
+} else {
+  return "You lose the game :(";
+}
+}
+(playGame(humanScore,computerScore))
+console.log(theFinalResult(humanScore,computerScore));
+
+/*
+1.You need new values for human and computer choice for each round right? Is that what your code is doing?
+2.You need to update scores right? Is your code updating the scores? What's the correct way to update a variable?
+2.Is your for loop to play the game 5 times correct? What's the correct way to increment a variable? (Same issues as number 2)
+3.Finally, is the code actually playing the game? Are the functions being run?
+*/
