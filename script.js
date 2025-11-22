@@ -16,7 +16,7 @@ DISPLAY the string value representing the round winner;
 - Write the logic to play the entire game.
 CREATE function playGame;
 MOVE playRound function in playGame func;
-CALL the function 5 times; alert
+CALL the function 5 times
 */
 
 let choiceString = ["ROCK","PAPER","SCISSORS"] ;
@@ -64,7 +64,7 @@ function playRound(humanChoice,computerChoice) {
 
   
 function playGame(){
-for (let i = 0; i < 4; i++){
+for (let i = 0; i < 5; i++){
    console.log((playRound(getHumanChoice(humanInput),getComputerChoice(choiceString))));
   }   
 }
@@ -80,9 +80,3 @@ function theFinalResult(humanScore,computerScore){
 (playGame(humanScore,computerScore))
 console.log(theFinalResult(humanScore,computerScore));
 
-/*
-1.You need new values for human and computer choice for each round right? Is that what your code is doing?
-2.You need to update scores right? Is your code updating the scores? What's the correct way to update a variable?
-2.Is your for loop to play the game 5 times correct? What's the correct way to increment a variable? (Same issues as number 2)
-3.Finally, is the code actually playing the game? Are the functions being run?
-*/
